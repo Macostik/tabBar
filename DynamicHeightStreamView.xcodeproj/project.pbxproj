@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		567928DA20567C68007C8700 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567928D920567C68007C8700 /* BaseCoordinator.swift */; };
 		567ED09B204FD48000E005B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567ED09A204FD48000E005B2 /* AppDelegate.swift */; };
 		567ED09D204FD48000E005B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567ED09C204FD48000E005B2 /* ViewController.swift */; };
 		567ED0A0204FD48000E005B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567ED09E204FD48000E005B2 /* Main.storyboard */; };
 		567ED0A2204FD48000E005B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567ED0A1204FD48000E005B2 /* Assets.xcassets */; };
 		567ED0A5204FD48000E005B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567ED0A3204FD48000E005B2 /* LaunchScreen.storyboard */; };
+		56A0299320567AD100D72E2E /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A0298F20567AD100D72E2E /* TabBarModel.swift */; };
+		56A0299420567AD100D72E2E /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A0299020567AD100D72E2E /* TabBarView.swift */; };
+		56A0299520567AD100D72E2E /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A0299120567AD100D72E2E /* TabBarViewModel.swift */; };
+		F47C5630139ED5B633343AB9 /* Pods_DynamicHeightStreamView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5489B2EAF2BF0DA5511BDCE3 /* Pods_DynamicHeightStreamView.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15D47D81CA2928A0A087E53C /* Pods-DynamicHeightStreamView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicHeightStreamView.release.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicHeightStreamView/Pods-DynamicHeightStreamView.release.xcconfig"; sourceTree = "<group>"; };
+		5489B2EAF2BF0DA5511BDCE3 /* Pods_DynamicHeightStreamView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicHeightStreamView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		567928D920567C68007C8700 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		567ED097204FD48000E005B2 /* DynamicHeightStreamView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicHeightStreamView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		567ED09A204FD48000E005B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		567ED09C204FD48000E005B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +30,10 @@
 		567ED0A1204FD48000E005B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		567ED0A4204FD48000E005B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		567ED0A6204FD48000E005B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56A0298F20567AD100D72E2E /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
+		56A0299020567AD100D72E2E /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		56A0299120567AD100D72E2E /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		9828300395F9DC72C77446B9 /* Pods-DynamicHeightStreamView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicHeightStreamView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicHeightStreamView/Pods-DynamicHeightStreamView.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47C5630139ED5B633343AB9 /* Pods_DynamicHeightStreamView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +53,8 @@
 			children = (
 				567ED099204FD48000E005B2 /* DynamicHeightStreamView */,
 				567ED098204FD48000E005B2 /* Products */,
+				F6E0A161CBCD7D16DFFFE919 /* Pods */,
+				F5163CE675FDC003883C1063 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +71,41 @@
 			children = (
 				567ED09A204FD48000E005B2 /* AppDelegate.swift */,
 				567ED09C204FD48000E005B2 /* ViewController.swift */,
+				567928D920567C68007C8700 /* BaseCoordinator.swift */,
+				56A0299620567AD700D72E2E /* TabBar */,
 				567ED09E204FD48000E005B2 /* Main.storyboard */,
 				567ED0A1204FD48000E005B2 /* Assets.xcassets */,
 				567ED0A3204FD48000E005B2 /* LaunchScreen.storyboard */,
 				567ED0A6204FD48000E005B2 /* Info.plist */,
 			);
 			path = DynamicHeightStreamView;
+			sourceTree = "<group>";
+		};
+		56A0299620567AD700D72E2E /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				56A0298F20567AD100D72E2E /* TabBarModel.swift */,
+				56A0299020567AD100D72E2E /* TabBarView.swift */,
+				56A0299120567AD100D72E2E /* TabBarViewModel.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		F5163CE675FDC003883C1063 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5489B2EAF2BF0DA5511BDCE3 /* Pods_DynamicHeightStreamView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6E0A161CBCD7D16DFFFE919 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9828300395F9DC72C77446B9 /* Pods-DynamicHeightStreamView.debug.xcconfig */,
+				15D47D81CA2928A0A087E53C /* Pods-DynamicHeightStreamView.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +115,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 567ED0A9204FD48000E005B2 /* Build configuration list for PBXNativeTarget "DynamicHeightStreamView" */;
 			buildPhases = (
+				44A2D2FE96AFA4184D082FDC /* [CP] Check Pods Manifest.lock */,
 				567ED093204FD48000E005B2 /* Sources */,
 				567ED094204FD48000E005B2 /* Frameworks */,
 				567ED095204FD48000E005B2 /* Resources */,
+				57D5A147996E6F0C2F8BA87E /* [CP] Embed Pods Frameworks */,
+				70C219D092085B886FF8D2F4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +178,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		44A2D2FE96AFA4184D082FDC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DynamicHeightStreamView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57D5A147996E6F0C2F8BA87E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DynamicHeightStreamView/Pods-DynamicHeightStreamView-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/StreamView/StreamView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StreamView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DynamicHeightStreamView/Pods-DynamicHeightStreamView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70C219D092085B886FF8D2F4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DynamicHeightStreamView/Pods-DynamicHeightStreamView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		567ED093204FD48000E005B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				567ED09D204FD48000E005B2 /* ViewController.swift in Sources */,
+				56A0299320567AD100D72E2E /* TabBarModel.swift in Sources */,
 				567ED09B204FD48000E005B2 /* AppDelegate.swift in Sources */,
+				56A0299420567AD100D72E2E /* TabBarView.swift in Sources */,
+				567928DA20567C68007C8700 /* BaseCoordinator.swift in Sources */,
+				56A0299520567AD100D72E2E /* TabBarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +383,7 @@
 		};
 		567ED0AA204FD48000E005B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9828300395F9DC72C77446B9 /* Pods-DynamicHeightStreamView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +399,7 @@
 		};
 		567ED0AB204FD48000E005B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15D47D81CA2928A0A087E53C /* Pods-DynamicHeightStreamView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

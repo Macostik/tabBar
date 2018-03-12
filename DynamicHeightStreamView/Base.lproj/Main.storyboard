@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +13,50 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DynamicHeightStreamView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSC-WI-Ugp" customClass="StreamView" customModule="StreamView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDT-Jw-KAx" customClass="TabBarView" customModule="DynamicHeightStreamView" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23d-DY-NDA" customClass="StreamView" customModule="StreamView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="23d-DY-NDA" secondAttribute="trailing" id="0oO-bT-EwR"/>
+                                    <constraint firstAttribute="bottom" secondItem="23d-DY-NDA" secondAttribute="bottom" id="37p-gF-omv"/>
+                                    <constraint firstAttribute="height" constant="44" id="PNi-ut-Hac"/>
+                                    <constraint firstItem="23d-DY-NDA" firstAttribute="leading" secondItem="dDT-Jw-KAx" secondAttribute="leading" id="pfU-lz-0tI"/>
+                                    <constraint firstItem="23d-DY-NDA" firstAttribute="top" secondItem="dDT-Jw-KAx" secondAttribute="top" id="roV-XQ-7xJ"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="streamView" destination="23d-DY-NDA" id="f93-qa-8AN"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YSC-WI-Ugp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CaG-G6-JAh"/>
+                            <constraint firstItem="dDT-Jw-KAx" firstAttribute="top" secondItem="YSC-WI-Ugp" secondAttribute="bottom" id="EJF-Tt-bVO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dDT-Jw-KAx" secondAttribute="bottom" id="HB9-la-ahn"/>
+                            <constraint firstItem="dDT-Jw-KAx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Rp3-XF-fBk"/>
+                            <constraint firstItem="YSC-WI-Ugp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dj2-yF-eLU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dDT-Jw-KAx" secondAttribute="trailing" id="kFH-cc-dwG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YSC-WI-Ugp" secondAttribute="trailing" id="ypZ-Nt-wo9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="streamView" destination="YSC-WI-Ugp" id="qGN-dQ-9HB"/>
+                        <outlet property="tabBarView" destination="dDT-Jw-KAx" id="lHU-3y-DKB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

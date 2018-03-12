@@ -1,0 +1,31 @@
+PODS:
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
+  - SnapKit (4.0.0)
+  - StreamView (1.5.0)
+
+DEPENDENCIES:
+  - RxCocoa
+  - RxSwift
+  - SnapKit
+  - StreamView (from `https://github.com/Macostik/StreamView.git`)
+
+EXTERNAL SOURCES:
+  StreamView:
+    :git: https://github.com/Macostik/StreamView.git
+
+CHECKOUT OPTIONS:
+  StreamView:
+    :commit: fbfea9c3e666844bac2a9b5a8f48ca712f8f4ccc
+    :git: https://github.com/Macostik/StreamView.git
+
+SPEC CHECKSUMS:
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  StreamView: 4b98c6d7337a163feb16a8ac73cb6b4777afa96c
+
+PODFILE CHECKSUM: f0251c86fa5a6a718d375853df92c945670b6106
+
+COCOAPODS: 1.4.0

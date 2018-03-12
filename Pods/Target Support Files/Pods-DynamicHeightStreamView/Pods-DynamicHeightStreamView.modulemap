@@ -1,0 +1,6 @@
+framework module Pods_DynamicHeightStreamView {
+  umbrella header "Pods-DynamicHeightStreamView-umbrella.h"
+
+  export *
+  module * { export * }
+}
