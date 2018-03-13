@@ -44,7 +44,7 @@ class TabBarView: UIView {
             self.viewModel.selectItem.onNext(view.item)
         }
         dataSource.addMetrics(metrics: metrics)
-        viewModel.items.accept(["one", "two", "three"])
+        viewModel.items.accept(["\u{1F3E0}", "\u{1F50D}", "three"])
         
     }
     private func setupBindings() {
