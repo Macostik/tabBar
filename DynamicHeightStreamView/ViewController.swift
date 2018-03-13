@@ -9,6 +9,8 @@
 import UIKit
 import StreamView
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
 
@@ -18,23 +20,28 @@ class ViewController: UIViewController {
         let ds = StreamDataSource<[String]>(streamView: self.streamView)
         return ds
     }()
+    fileprivate let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         streamView.showsVerticalScrollIndicator = false
-        streamView.isScrollEnabled = false
+        streamView.layout = HorizontalStreamLayout()
+        streamView.isPagingEnabled = true
         let metrics = StreamMetrics<CharacterCell>()
         metrics.selectable = false
         metrics.modifyItem = { [unowned self] item in
             guard let streamView = self.streamView else { return }
-            let view = item.metrics.loadView()
-            let labelHeight = (item.entry as? String)?.heightWithFont(font: UIFont.systemFont(ofSize: 17.0), width: streamView.width) ?? 0.0
-            let a = view.systemLayoutSizeFitting(UILayoutFittingExpandedSize).height + labelHeight 
-            item.size = a
+            item.size = streamView.size.width
         }
         dataSource.addMetrics(metrics: metrics)
         dataSource.items = ["onekjdksfkjdkfjkadsjfjkkasjdfl;asdjflkajsdfkjaskdjfkjasdkfjas;lkdfjlkasdjfkjsfkdjs", "two", "three"]
+        
+        tabBarView.selectItem.asObserver()
+            .subscribe(onNext: { [unowned self] item in
+                guard let item = item else { return }
+                self.streamView.scrollToItemPassingTest(test: { $0.position.index == item.position.index }, animated: true)
+            }).disposed(by: disposeBag)
     }
 }
 
@@ -54,8 +61,7 @@ class CharacterCell: EntryStreamReusableView<String> {
         
         addSubview(characterLabel)
         characterLabel.snp.makeConstraints {
-            $0.top.bottom.equalTo(self).inset(20)
-            $0.leading.trailing.equalTo(self)
+            $0.edges.equalTo(self)
         }
     }
 }

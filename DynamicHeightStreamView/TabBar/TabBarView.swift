@@ -15,6 +15,7 @@ class TabBarView: UIView {
     
     @IBOutlet var streamView: StreamView!
     var viewModel = TabBarViewModel()
+    var selectItem = PublishSubject<StreamItem?>()
     private let disposeBag = DisposeBag()
     fileprivate lazy var dataSource: StreamDataSource<[String]> = {
         let ds = StreamDataSource<[String]>(streamView: self.streamView)
@@ -36,9 +37,11 @@ class TabBarView: UIView {
         streamView.isScrollEnabled = false
         streamView.layout = HorizontalStreamLayout()
         let metrics = StreamMetrics<TabBarItemCell>()
-        metrics.selectable = false
         metrics.modifyItem = { [unowned self] item in
             item.size = self.streamView.width/3
+        }
+        metrics.selection = { [unowned self] view in
+            self.viewModel.selectItem.onNext(view.item)
         }
         dataSource.addMetrics(metrics: metrics)
         viewModel.items.accept(["one", "two", "three"])
@@ -49,8 +52,8 @@ class TabBarView: UIView {
             .bind(to: dataSource.rx.items)
             .disposed(by: disposeBag)
         viewModel.selectItem.asObservable()
-        .bind(to: streamView.rx.scrollToItem)
-        .disposed(by: disposeBag)
+            .bind(to: selectItem )
+            .disposed(by: disposeBag)
     }
 }
 
