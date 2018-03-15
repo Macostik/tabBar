@@ -35,7 +35,7 @@ class ViewController: UIViewController {
             item.size = streamView.size.width
         }
         dataSource.addMetrics(metrics: metrics)
-        dataSource.items = ["onekjdksfkjdkfjkadsjfjkkasjdfl;asdjflkajsdfkjaskdjfkjasdkfjas;lkdfjlkasdjfkjsfkdjs", "two", "three"]
+        dataSource.items = ["one", "two", "three"]
         
         tabBarView.selectItem.asObserver()
             .subscribe(onNext: { [unowned self] item in

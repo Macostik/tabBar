@@ -41,10 +41,13 @@ class TabBarView: UIView {
             item.size = self.streamView.width/3
         }
         metrics.selection = { [unowned self] view in
+            guard let item = view.item else { return }
+            self.streamView.itemsPassingTest(test: { $0 !== item }).forEach({ $0.selected = false })
+            item.selected = true
             self.viewModel.selectItem.onNext(view.item)
         }
         dataSource.addMetrics(metrics: metrics)
-        viewModel.items.accept(["\u{1F3E0}", "\u{1F50D}", "three"])
+        viewModel.items.accept(["a", "b", "c"])
         
     }
     private func setupBindings() {
@@ -63,8 +66,10 @@ class TabBarItemCell: EntryStreamReusableView<String> {
     
     override func setup(entry: String)  {
         
-        characterLabel.text = entry.uppercased()
+        characterLabel.text = entry
         characterLabel.textAlignment = .center
+        characterLabel.font = UIFont.icons(size: 17.0)
+        characterLabel.textColor = UIColor.black
     }
     
     override func layoutWithMetrics(metrics: StreamMetricsProtocol) {
@@ -73,6 +78,12 @@ class TabBarItemCell: EntryStreamReusableView<String> {
         addSubview(characterLabel)
         characterLabel.snp.makeConstraints {
             $0.edges.equalTo(self)
+        }
+    }
+    
+    override var selected: Bool {
+        didSet {
+            characterLabel.textColor = selected ? .white : .black
         }
     }
 }
@@ -92,6 +103,20 @@ extension Reactive where Base: StreamView {
                 return item === value
             }, animated: false)
         }
+    }
+}
+
+extension Reactive where Base: UILabel {
+    public var select: Binder<Bool>  {
+        return Binder(self.base) { label, selected in
+            label.textColor = selected ? .white : .black
+        }
+    }
+}
+
+extension UIFont {
+    static func icons(size: CGFloat) -> UIFont! {
+        return UIFont(name: "idic", size: size)
     }
 }
 

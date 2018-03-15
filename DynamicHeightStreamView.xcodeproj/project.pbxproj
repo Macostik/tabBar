@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		566F1FF1205921AF006C7301 /* idic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 566F1FF020591FB9006C7301 /* idic.ttf */; };
 		567928DA20567C68007C8700 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567928D920567C68007C8700 /* BaseCoordinator.swift */; };
 		567ED09B204FD48000E005B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567ED09A204FD48000E005B2 /* AppDelegate.swift */; };
 		567ED09D204FD48000E005B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567ED09C204FD48000E005B2 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		15D47D81CA2928A0A087E53C /* Pods-DynamicHeightStreamView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicHeightStreamView.release.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicHeightStreamView/Pods-DynamicHeightStreamView.release.xcconfig"; sourceTree = "<group>"; };
 		5489B2EAF2BF0DA5511BDCE3 /* Pods_DynamicHeightStreamView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicHeightStreamView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		566F1FF020591FB9006C7301 /* idic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = idic.ttf; sourceTree = "<group>"; };
 		567928D920567C68007C8700 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		567ED097204FD48000E005B2 /* DynamicHeightStreamView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicHeightStreamView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		567ED09A204FD48000E005B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				567ED0A1204FD48000E005B2 /* Assets.xcassets */,
 				567ED0A3204FD48000E005B2 /* LaunchScreen.storyboard */,
 				567ED0A6204FD48000E005B2 /* Info.plist */,
+				566F1FF020591FB9006C7301 /* idic.ttf */,
 			);
 			path = DynamicHeightStreamView;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				567ED0A5204FD48000E005B2 /* LaunchScreen.storyboard in Resources */,
+				566F1FF1205921AF006C7301 /* idic.ttf in Resources */,
 				567ED0A2204FD48000E005B2 /* Assets.xcassets in Resources */,
 				567ED0A0204FD48000E005B2 /* Main.storyboard in Resources */,
 			);

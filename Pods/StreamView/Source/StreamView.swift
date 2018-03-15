@@ -331,7 +331,7 @@ public class StreamView: UIScrollView {
         return items.filter(test)
     }
     
-    public func scrollToItemPassingTest( test: (StreamItem) -> Bool, positionScroll: PositionScroll = .middle, animated: Bool) -> StreamItem? {
+    @discardableResult public func scrollToItemPassingTest( test: (StreamItem) -> Bool, positionScroll: PositionScroll = .middle, animated: Bool) -> StreamItem? {
         let item = itemPassingTest(test: test)
         scrollToItem(item: item, positionScroll: positionScroll, animated: animated)
         return item
